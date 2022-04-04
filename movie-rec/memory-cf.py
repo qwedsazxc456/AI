@@ -64,6 +64,6 @@ items=np.array(items).reshape(-1,1)
 users = rating['user'].unique().repeat(10)
 users = np.array(users).reshape(-1,1)
 
-result = np.concatenate(users,items,axis=1)
+result = np.concatenate((users,items),axis=1)
 result = pd.DataFrame(result, columns=['user','item'])
 result.to_csv('result.csv', index=False)
